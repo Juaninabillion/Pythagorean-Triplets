@@ -1,0 +1,31 @@
+<html>
+<body>
+<p>
+Find a pythagorean triplet that fullfils the following : a + b + c = 1000; such that a^2 + b^2 = c^2. retrun the product 
+</p>
+
+<p id = answer>
+
+</p>
+</body>
+
+</html>
+
+
+
+document.getElementById("answer").innerHTML = "Answer = "+(trips());
+function trips(){
+var a =0,b=0,c=0; 
+var lim = 1000;
+var exit = 0;
+//a + b+ c = lim
+for (a = 0; a<lim/3;a++){
+	for (b = 0 ; b<lim/2;b++){
+  		c = (a + b) - lim;
+    	if(Math.pow(a,2) + Math.pow(b,2) == Math.pow(c,2))
+    	{
+    		return Math.abs(a*b*c);
+    	}
+  }
+}
+}
